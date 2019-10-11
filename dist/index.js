@@ -1,0 +1,2 @@
+var t=["twelve","one","two","three","four","five","six","seven","eight","nine","ten","eleven"],e=["o'clock","five","ten","quarter","twenty","twenty-five","half"];module.exports=function(n){var i=n||new Date,r=i.getMinutes();r=r>30?30-(r-30):r;var o=Math.round(r/5),s=(0===o&&i.getMinutes()>40?i.getHours()+1:i.getHours())%12;return{date:i,hour:t[s>=12?0:s],estimate:e[o],transition:0===o?"":i.getMinutes()>30?"to":"past",toString:function(){return"it's about "+this.estimate+" "+this.transition+" "+this.hour}}};
+//# sourceMappingURL=index.js.map
