@@ -1,29 +1,24 @@
 {
   "name": "@fromdl/roughly",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Find out what time it is, roughly",
   "source": "src/index.ts",
-  "main": "dist/index.js",
-  "module": "dist/index.module.js",
-  "unpkg": "dist/index.umd.js",
-  "types": "dist/index.d.ts",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
+  "exports": {
+    "types": "./build/index.d.ts",
+    "default": "./build/index.js"
+  },
+  "type": "module",
   "scripts": {
-    "build": "microbundle",
-    "dev": "microbundle watch",
-    "test": "jest"
+    "build": "rm -rf ./build && tsc --build",
+    "test": "npm run build && uvu"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@babel/core": "^7.6.4",
-    "@babel/preset-env": "^7.6.3",
-    "@babel/preset-typescript": "^7.6.0",
-    "@types/jest": "^24.0.18",
-    "babel-jest": "^24.9.0",
-    "jest": "^24.9.0",
-    "microbundle": "^0.11.0",
-    "ts-node": "^8.4.1",
-    "typescript": "^3.6.4"
+    "typescript": "^5.0.3",
+    "uvu": "^0.5.6"
   }
 }
